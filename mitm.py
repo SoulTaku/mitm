@@ -36,6 +36,10 @@ gateway_ip      = args.gateway
 conf.iface      = interface
 conf.verb       = 0
 done            = False
+filename        = args.output
+
+if not args.output.endswith('.pcap'):
+    filename += '.pcap'
 
 print('[*] Enabling IP forwarding...')
 os.system('sysctl -w net.ipv4.ip_forward=1')
@@ -71,7 +75,7 @@ try:
     packets = sniff(filter=bpf_filter, iface=interface, prn=callback)
 
 finally:
-    wrpcap(args.output, packets)
+    wrpcap(filename, packets)
     print('\r', end='')
     print(packets)
     print('[*] Cleaning up...')
