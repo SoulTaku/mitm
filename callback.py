@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 from scapy.all import *
 
 def callback(packet):
