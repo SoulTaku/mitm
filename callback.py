@@ -1,6 +1,11 @@
 #!/usr/bin/python2
+import nfqueue
 from scapy.all import *
 
 def callback(packet):
-    if packet.haslayer(DNSRR):
-        print(packet[DNSRR].show())
+    #print('in')
+    #data = packet.get_data()
+    #pkt = IP(data)
+    #print(data, pkt)
+    #payload.set_verdict(nfqueue.ACCEPT)
+    return packet.show()

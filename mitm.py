@@ -27,7 +27,7 @@ if args.callback is not None:
     callback = __import__(args.callback).callback
 else:
     def callback(packet):
-        pass
+        return packet.show()
 
 interface       = args.interface
 target_ip       = args.target
