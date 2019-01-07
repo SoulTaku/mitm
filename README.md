@@ -5,6 +5,8 @@ MITM tool writte in python using scapy
 >- Packet sniffing
 
 >**TO-DO:**
->* Manipulate packets
->* Spoof DNS
->* Probably more...
+>* ~~Manipulate packets~~
+>* ~~Spoof DNS~~
+>* ~~Probably more...~~
+>* Beautify plugins
+>* Add more plugins

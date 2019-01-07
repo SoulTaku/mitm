@@ -1,3 +1,3 @@
 > **TO-DO**
->* Beautify plugin
+>* Beautify plugins
 >* Add more plugins
