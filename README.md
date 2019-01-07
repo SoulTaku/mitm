@@ -9,4 +9,4 @@ MITM tool writte in python using scapy
 >**TO-DO:**
 >* Beautify plugins
 >* Add more plugins
->* ~~Probably more...~~
+>* Probably more...
