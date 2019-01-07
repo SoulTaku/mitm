@@ -17,7 +17,8 @@ class ARP_attacker:
 
     def get_mac(self, ip):
         ans, unans = srp(Ether(dst='ff:ff:ff:ff:ff:ff')/ARP(pdst=ip), timeout=2, retry=10)
-        return ans[0][1][Ether].src
+        for s, r:
+            return r[Ether].src
 
 
     def poison(self):
