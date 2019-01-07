@@ -3,10 +3,10 @@ MITM tool writte in python using scapy
 
 >_Current features:_
 >- Packet sniffing
+>- Manipulate packets
+>- Spoof DNS
 
 >**TO-DO:**
->* ~~Manipulate packets~~
->* ~~Spoof DNS~~
->* ~~Probably more...~~
 >* Beautify plugins
 >* Add more plugins
+>* ~~Probably more...~~
